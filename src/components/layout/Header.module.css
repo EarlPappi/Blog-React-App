@@ -1,0 +1,16 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    align-items: center;
+}
+
+.header nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.header nav p{
+    cursor: pointer;
+}

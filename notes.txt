@@ -1,0 +1,29 @@
+ const [loggedInUser, setLoggedInUser] = useState({
+    username: '',
+    password: '',
+    blogposts: []
+  })
+
+  const handleLogin = (username, password) => {
+    const existingUser = users.filter(user => user.username === username);
+    if (existingUser.length > 1) {
+      const userToCheck = existingUser[0];
+      if (userToCheck.password !== password) {
+        alert(`Wrong password`);
+        return;
+      }
+      setLoggedInUser(userToCheck)
+      // 
+    }
+  }
+
+  const handleSignup = (username, password, email) => {
+    const existingUser = users.filter(user => user.username === username);
+    if (existingUser.length > 0) {
+      alert(`User exists`)
+      return;
+    }
+    allUsers.push({ id: allUsers.length, username, password, email, blogposts: [] })
+    setDisplaySignup(false)
+
+  }

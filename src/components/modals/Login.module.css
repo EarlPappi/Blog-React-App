@@ -1,0 +1,65 @@
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(19, 19, 25, 0.792);
+    position: absolute;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    filter: blur(60);
+    z-index: 2;
+}
+
+.overlay{
+    position: absolute;
+    top: 10vh;
+    left: 33.3vw;
+
+    margin: 0 auto;
+
+    border-radius: 10px;
+    padding: 20px;
+    width: 470px;
+    height: max-content;
+    background-color: #27292D;
+    z-index: 2000;
+
+}
+
+.overlay h3, .overlay h2{
+    text-align: center;
+}
+
+.loginLabel{
+    display: block;
+    margin-bottom: 10px;
+    color: #C5C7CA;
+}
+
+.loginInput{
+    border: 1.5px solid #35373B;
+    background-color: transparent;
+    padding: 10px;
+    width: 95%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.loginButton{
+    height: 43px;
+    padding: 10px 0px;
+    width: 100%;
+    background-color: #4A96FF;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 5px;
+}
+
+span{
+    cursor: pointer;
+}
+
+span:hover{
+    text-decoration: underline;
+}
