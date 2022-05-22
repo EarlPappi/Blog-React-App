@@ -16,9 +16,13 @@ const Signup = (props) => {
         password: newUserPassword
     };
 
+
     const handleSignup = (e) =>{
         e.preventDefault();
-        setAllUsers([...allUsers, newUser])
+        setAllUsers([...allUsers, newUser]);
+
+        // move from signup immediately to login for user to enter details
+        props.showLoginHandler();
 
         console.log(newUser);
         console.log({allUsers});
@@ -33,7 +37,7 @@ const Signup = (props) => {
                 <h3>Sign Up</h3>
                 <h2>Create an account to continue</h2>
 
-                { console.log({allUsers}) }
+                {/* { console.log({allUsers}) } */}
 
                 <form action="" onSubmit={handleSignup}>
                     <label htmlFor="" className={classes.loginLabel}>Email</label>

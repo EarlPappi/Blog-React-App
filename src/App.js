@@ -1,7 +1,7 @@
 import Wrapper from './components/layout/wrapper';
 import classes from './components/Global/Global.module.css'
 import CreateCon from './components/Posts/PostCreate/CreateCon';
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import AuthContext from './store/auth-context';
 import Header from './components/layout/Header';
 import Signup from './components/modals/Signup';
@@ -17,7 +17,7 @@ function App() {
 
   
   const [displayLogin, setDisplayLogin] = useState(false);
-  const [displaySignup, setDisplaySignup] = useState(false);
+  const [displaySignup, setDisplaySignup] = useState(false);  
 
   // Global state  
   const [loggedInUser, setLoggedInUser] = useState({
@@ -41,7 +41,7 @@ function App() {
   }])
 
   const [userExist, setUserExist] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
 
   const hideLoginHandler = () => {
@@ -63,9 +63,11 @@ function App() {
   }
 
 
+  console.log({allUsers})
+
   return (
     <React.Fragment>
-      <AuthContext.Provider value={[allUsers, setAllUsers, loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn, userExist, setUserExist]}>
+      <AuthContext.Provider value={[allUsers, setAllUsers, loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn, userExist, setUserExist, displayLogin, setDisplayLogin, isLoggedIn, setIsLoggedIn]}>
 
         <Wrapper>
           <Header showLogin={showLoginHandler} showSignup={showSignupHandler} />

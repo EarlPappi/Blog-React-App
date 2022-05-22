@@ -5,12 +5,12 @@ import AuthContext from '../../store/auth-context';
 const LoginForm = ({showSignupHandler, hideLogin}) => {
     const [userUsername, setUserUsername] = useState('');
     const [userPassword, setUserPassword] = useState('');
-    const [allUser] = useContext(AuthContext);
+    const [allUser, setIsLoggedIn] = useContext(AuthContext);
     // const [existingUser, setExistinguser] = useState(false);
     // const ctx = useContext(AuthContext);
     // const allUser = ctx.allUsers;
 
-    console.log(allUser)
+    // console.log(allUser)
 
     // const handleUsernameChange = (e) =>{
     //     setUserUsername(e.target.value);
@@ -37,7 +37,8 @@ const LoginForm = ({showSignupHandler, hideLogin}) => {
             }
 
             if(userCheck.username === userUsername && userCheck.password === userPassword){
-                alert("Make sense, uou're logged in");                
+                setIsLoggedIn(true);
+                alert("Make sense, y    ou're logged in");                
                 return;
             }
         }
