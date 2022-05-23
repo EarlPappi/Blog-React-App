@@ -27,3 +27,17 @@
     setDisplaySignup(false)
 
   }
+
+
+
+  use object majorly for useContext dstructuring so you cn just pass the name and not worry about wetin no dey
+
+  you get 
+
+
+
+  - fixed the login finally 
+
+  - lets go to sign up
+
+  -

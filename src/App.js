@@ -20,28 +20,27 @@ function App() {
   const [displaySignup, setDisplaySignup] = useState(false);  
 
   // Global state  
-  const [loggedInUser, setLoggedInUser] = useState({
-    id: 1,
-    username: 'Earl',
-    password: 'earl',
-    blogposts: []
-  });
+  const [loggedInUser, setLoggedInUser] = useState();
+
+  const [newUser, setNewUser] = useState();
 
   const [allUsers, setAllUsers] = useState([{
     id: 1,
+    email: "earl@earl.com",
     username: 'Earl',
     password: 'earl',
     blogposts: []
   },
   {
     id: 2,
+    email: "pappi@pappi.com",
     username: 'Pappi',
     password: 'pappi',
     blogposts: []
   }])
 
   const [userExist, setUserExist] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
   const hideLoginHandler = () => {
@@ -62,12 +61,9 @@ function App() {
     setDisplaySignup(false);
   }
 
-
-  console.log({allUsers})
-
   return (
     <React.Fragment>
-      <AuthContext.Provider value={[allUsers, setAllUsers, loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn, userExist, setUserExist, displayLogin, setDisplayLogin, isLoggedIn, setIsLoggedIn]}>
+      <AuthContext.Provider value={{allUsers, setAllUsers, loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn, userExist, setUserExist, displayLogin, setDisplayLogin, newUser, setNewUser}}>
 
         <Wrapper>
           <Header showLogin={showLoginHandler} showSignup={showSignupHandler} />
@@ -77,7 +73,7 @@ function App() {
             <p className={classes.h1alt}>How are you doing today? Would you like to share something with the community 🤗</p>
           </React.Fragment>
 
-          <CreateCon />
+          <CreateCon showLoginHandler={showLoginHandler}/>
         </Wrapper>
 
 
