@@ -5,16 +5,8 @@ import AuthContext from '../../store/auth-context';
 const LoginForm = ({ showSignupHandler, hideLogin }) => {
     const [userUsername, setUserUsername] = useState('');
     const [userPassword, setUserPassword] = useState('');
-    const { allUsers, setIsLoggedIn, loggedInUser, setLoggedInUser, setNewUser, newUser } = useContext(AuthContext);
-    // const [existingUser, setExistinguser] = useState(false);
-    // const ctx = useContext(AuthContext);
-    // const allUser = ctx.allUsers;
-
-    // console.log(allUser)
-
-    // const handleUsernameChange = (e) =>{
-    //     setUserUsername(e.target.value);
-    // }
+    const { allUsers, setIsLoggedIn, loggedInUser, setLoggedInUser} = useContext(AuthContext);
+    
 
     const handlePasswordChange = (e) => {
         setUserPassword(e.target.value);
@@ -41,17 +33,20 @@ const LoginForm = ({ showSignupHandler, hideLogin }) => {
             if (userCheck.username === userUsername && userCheck.password === userPassword) {
                 setIsLoggedIn(true);
                 hideLogin();
-                console.log(userUsername)
+                console.log(userUsername);
+                setLoggedInUser(prev =>{
+                    return userUsername
+                });
 
-                const toSetUser = {
-
-                    username: userUsername,
-                    blogpost: []
-                }
-                setNewUser(toSetUser)
+//                 const toSetUser = {
+// 
+//                     username: userUsername,
+//                     blogpost: []
+//                 }
+//                 setNewUser(toSetUser)
                 alert("Make sense, you're logged in");
 
-                console.log(newUser)
+                console.log(loggedInUser)
                 return;
             }
         }

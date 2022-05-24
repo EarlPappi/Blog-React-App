@@ -20,9 +20,9 @@ function App() {
   const [displaySignup, setDisplaySignup] = useState(false);  
 
   // Global state  
-  const [loggedInUser, setLoggedInUser] = useState();
+  
 
-  const [newUser, setNewUser] = useState();
+  // const [newUser, setNewUser] = useState();
 
   const [allUsers, setAllUsers] = useState([{
     id: 1,
@@ -61,9 +61,12 @@ function App() {
     setDisplaySignup(false);
   }
 
+  const [loggedInUser, setLoggedInUser] = useState('')
+  const [userBlogs, setUserBlogs] = useState(['This is a sample demo blog and its as follow '])
+
   return (
     <React.Fragment>
-      <AuthContext.Provider value={{allUsers, setAllUsers, loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn, userExist, setUserExist, displayLogin, setDisplayLogin, newUser, setNewUser}}>
+      <AuthContext.Provider value={{allUsers, setAllUsers, loggedInUser, setLoggedInUser, isLoggedIn, setIsLoggedIn, userExist, setUserExist, displayLogin, setDisplayLogin, userBlogs, setUserBlogs}}>
 
         <Wrapper>
           <Header showLogin={showLoginHandler} showSignup={showSignupHandler} />
