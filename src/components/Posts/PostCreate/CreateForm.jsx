@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../../../store/auth-context";
-import classes from '../../Global/Global.module.css'
 import classesAlt from './CreateForm.module.css'
 
 
 const CreateFrom = ({showLoginHandler}) => {
 
-    const { isLoggedIn, loggedInUser, userBlogs, setUserBlogs } = useContext(AuthContext)
+    const { isLoggedIn, userBlogs, setUserBlogs } = useContext(AuthContext)
 
     const [blogEntry, setBlogEntry] = useState('');
 

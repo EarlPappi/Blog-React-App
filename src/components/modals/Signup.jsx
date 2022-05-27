@@ -11,6 +11,9 @@ const Signup = (props) => {
     const [usernameExist, setUsernameExist] = useState(null);
 
 
+    console.log(usernameExist);
+
+
     const newUser = {
         id: allUsers.length + 1,
         username: newUserUsername,

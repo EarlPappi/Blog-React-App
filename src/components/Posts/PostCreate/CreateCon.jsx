@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import classes from '../../Global/Global.module.css'
 import CreateForm from './CreateForm'
 import classes2 from './CreateCon.module.css'
 import AuthContext from '../../../store/auth-context';
