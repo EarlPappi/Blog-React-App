@@ -72,7 +72,7 @@ function App() {
           <Header showLogin={showLoginHandler} showSignup={showSignupHandler} />
 
           <React.Fragment>
-            <h1>Hello {allUsers[0].username}</h1>
+            <h1>Hello { loggedInUser }</h1>
             <p className={classes.h1alt}>How are you doing today? Would you like to share something with the community 🤗</p>
           </React.Fragment>
 

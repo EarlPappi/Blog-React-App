@@ -20,7 +20,15 @@ const CreateFrom = ({showLoginHandler}) => {
         }
 
         if(isLoggedIn){
+
+            if(blogEntry.trim() <= 0){
+                alert("Blog post cannot be empty!");
+                return;
+            }
+            
             alert("Post created successfully")
+
+
 
             setUserBlogs((prev) =>{
                 return [...prev, blogEntry]

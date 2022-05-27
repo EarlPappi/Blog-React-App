@@ -26,7 +26,7 @@ const LoginForm = ({ showSignupHandler, hideLogin }) => {
             const userCheck = existingUser[0];
 
             if (userCheck.password !== userPassword) {
-                alert("Wrong and wrongest password ever");
+                alert("Wrong password, try again!");
                 return;
             }
 
@@ -44,7 +44,7 @@ const LoginForm = ({ showSignupHandler, hideLogin }) => {
 //                     blogpost: []
 //                 }
 //                 setNewUser(toSetUser)
-                alert("Make sense, you're logged in");
+                alert("You're logged in!");
 
                 console.log(loggedInUser)
                 return;
@@ -52,7 +52,7 @@ const LoginForm = ({ showSignupHandler, hideLogin }) => {
         }
 
         if (existingUser <= 0) {
-            alert("You no exist here, dakun sign up ASAP");
+            alert("Details does not exist, kindly signup!");
         }
     }
 
